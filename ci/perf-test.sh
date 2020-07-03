@@ -46,7 +46,6 @@ function main {
         traceStart "Generate csproj & sln files :csharp:"
             dotnet run -p "${PROJECT_DIR}/.shared-ci/tools/RunUnity/RunUnity.csproj" -- \
                 -batchmode \
-                -nographics \
                 -projectPath "${PROJECT_DIR}/workers/unity" \
                 -quit \
                 -logfile "${PROJECT_DIR}/logs/generate-csproj-sln-files.log" \
@@ -64,7 +63,6 @@ function main {
         traceStart "Parsing XML Test Results"
             dotnet run -p "${PROJECT_DIR}/.shared-ci/tools/RunUnity/RunUnity.csproj" -- \
                 -batchmode \
-                -nographics \
                 -quit \
                 -projectPath "${PROJECT_DIR}/workers/unity" \
                 "${ACCELERATOR_ARGS}" \
@@ -111,7 +109,6 @@ function runTests {
         pushd "workers/unity"
             dotnet run -p "${PROJECT_DIR}/.shared-ci/tools/RunUnity/RunUnity.csproj" -- \
                 -batchmode \
-                -nographics \
                 -projectPath "${PROJECT_DIR}/workers/unity" \
                 "${ACCELERATOR_ARGS}" \
                 -logfile "${PROJECT_DIR}/logs/${platform}-${burst}-${apiProfile}-${scriptingBackend}-perftest-run.log" \

@@ -68,7 +68,6 @@ traceStart "Testing Unity: Playmode :joystick:"
     pushd "workers/unity"
         dotnet run -p "${PROJECT_DIR}/.shared-ci/tools/RunUnity/RunUnity.csproj" -- \
             -batchmode \
-            -nographics \
             -enableCodeCoverage \
             -coverageResultsPath "${COVERAGE_RESULTS_PATH}/playground" \
             -coverageOptions "${COVERAGE_OPTIONS}" \
